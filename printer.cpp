@@ -118,12 +118,12 @@ void printerPrintText(const char* text,
 	puts(buffer);
 }
 /// <summary>
-/// Print a C-String slowly with 50ms delay
+/// Print a C-String slowly with DEFAULT_DELAY_MS interval
 /// </summary>
 /// <param name="text"></param>
 void printerSlowPrint(const char* text)
 {
-	printerSlowPrint(text, 50);
+	printerSlowPrint(text, DEFAULT_DELAY_MS);
 }
 /// <summary>
 /// Print a C-String slowly with delay between each characters
@@ -135,7 +135,7 @@ void printerSlowPrint(const char* text, int delay)
 	int len = strnlen_s(text, MAX_BUFFER_LENGTH);
 	for (int i = 0; i < len; i++)
 	{
-		printf("%c", text[i]);
+		putchar(text[i]);
 		std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 	}
 

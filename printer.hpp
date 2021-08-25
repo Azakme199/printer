@@ -16,6 +16,7 @@
 
 
 constexpr auto MAX_BUFFER_LENGTH = 128;
+constexpr auto DEFAULT_DELAY_MS = 50;
 constexpr bool IN_RANGE(int option, int start, int end)
 {
 	return option > start && option < end;
