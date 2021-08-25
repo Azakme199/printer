@@ -132,7 +132,7 @@ void printerSlowPrint(const char* text)
 /// <param name="delay"></param>
 void printerSlowPrint(const char* text, int delay)
 {
-	int len = strnlen_s(text, MAX_BUFFER_LENGTH);
+	int len = strnlen(text, MAX_BUFFER_LENGTH);
 	for (int i = 0; i < len; i++)
 	{
 		putchar(text[i]);
