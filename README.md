@@ -7,14 +7,42 @@ Designed with Cross-platform in mind
 **Targets tested :**
   * Windows 10 21H1
   * Ubuntu 20.04.1 LTS
-
-## Building
-First inculde in your C++ program by
+## Usage
+Inculde in your C++ program by
 ```Cpp
 #include "printer.hpp"
 ```
+Then call the functions as you see fit
+
+**Example :**
+```cpp
+//test.cpp
+#include <stdio.h>
+#include "printer.hpp"
+int main()
+{
+	
+	printerClearScreen();	
+	
+	puts("\n\n");
+	printerSlowPrint("Its too cold here...z.z..z.z.zz\n");
+	printerPrintText("I need to go to my room fast\n", _text_foreground_white, _text_background_red);
+	printerPrintText("Maybe a coffee will do\n", _text_foreground_red, _text_background_white);
+	printerPrintText("COFFEEE...\n", _text_foreground_red, _text_background_default,_text_style_underline);
+	
+	puts("\n\n\n\n");
+	
+ return 0;
+}
+```
+**Output :**
+
+![image](https://user-images.githubusercontent.com/86375359/130758551-3786333d-ba19-4673-a3ea-7366baa397d4.png)
+
+## Building
+
 For Windows,\
-I used Visual Studio and just a simply including will do it
+I used Visual Studio
 
 For Ubuntu,\
 You will need to link the **.cpp** file during build
